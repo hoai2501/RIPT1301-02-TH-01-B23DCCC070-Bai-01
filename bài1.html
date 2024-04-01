@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đồng hồ đếm thời gian</title>
+<style>
+body {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: hsl(158, 36%, 71%);
+  flex-direction: column;
+  background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.sforum.vn%2Fsforum%2Fwp-content%2Fuploads%2F2020%2F02%2Fhouse-snow-mountaints-white-background-iphone-wallpaper-ongliong11.png&tbnid=c2fvJpxrp-ymxM&vet=12ahUKEwjjhYbzw6CFAxU5X_UHHcN3BlwQMygKegQIARBu..i&imgrefurl=https%3A%2F%2Fcellphones.com.vn%2Fsforum%2Fmoi-ban-doc-tai-ve-bo-hinh-nen-chu-de-bang-tuyet-danh-rieng-cho-iphone&docid=ll-HJtio4Awo3M&w=1500&h=3000&q=h%C3%ACnh%20n%E1%BB%81n%20n%C3%BAi%20tuy%E1%BA%BFt%204k&hl=vi&ved=2ahUKEwjjhYbzw6CFAxU5X_UHHcN3BlwQMygKegQIARBu');
+  background-size :cover;
+  background-position: center;
+  
+
+}
+
+.clock-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.clock-label {
+  color :black;
+  font-size: 2.0em;
+  margin-bottom: 10px;
+}
+
+.clock {
+  display: flex;
+  font-size: 1.5em;
+  font-family: Arial, sans-serif;
+}
+
+.clock-item {
+  margin: 0 0.3em;
+}
+</style>
+</head>
+<body>
+<div class="clock-label">Thời gian hiện tại là :</div>
+<div class="clock-container">
+  <div class="clock">
+    <div id="hour" class="clock-item"></div>
+    <div class="clock-item">:</div>
+    <div id="minute" class="clock-item"></div>
+    <div class="clock-item">:</div>
+    <div id="second" class="clock-item"></div>
+  </div>
+</div>
+
+<script>
+function updateClock() {
+  const now = new Date();
+  const hour = now.getHours().toString().padStart(2, '0');
+  const minute = now.getMinutes().toString().padStart(2, '0');
+  const second = now.getSeconds().toString().padStart(2, '0');
+  
+  document.getElementById('hour').textContent = hour;
+  document.getElementById('minute').textContent = minute;
+  document.getElementById('second').textContent = second;
+}
+
+setInterval(updateClock, 1000);
+</script>
+</body>
+</html>
